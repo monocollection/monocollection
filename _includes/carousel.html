@@ -1,0 +1,31 @@
+<div id="carousel{% if include.id %}-{{ include.id }}{% endif %}" class="carousel slide" data-ride="carousel" data-pause="false">
+  <div class="carousel--footer d-flex flex-row justify-content-center align-items-center w-100">
+    <a class="d-flex carousel--footer-control-prev" href="#carousel{% if include.id %}-{{ include.id }}{% endif %}" role="button" data-slide="prev">
+      <img src="/img/icon-prev.png" alt="prev" />
+    </a>
+    <ol class="d-flex carousel-indicators{% if include.covers.size > 20 %} fat{% endif %}">
+      {% for cover in include.covers %}
+      <li data-target="#carousel{% if include.id %}-{{ include.id }}{% endif %}" data-slide-to="{{ forloop.index0 }}"{% if forloop.first %} class="active"{% endif %}></li>
+      {% endfor %}
+    </ol>
+    <a class="d-flex carousel--footer-control-next" href="#carousel{% if include.id %}-{{ include.id }}{% endif %}" role="button" data-slide="next">
+      <img src="/img/icon-next.png" alt="next" />
+    </a>
+  </div>
+  <div class="carousel-inner">
+    <div id="play-pause" class="play"><img id="play-pause-button" src="/img/ios7-pause.png" alt=""></div>
+    {% for cover in covers %}
+    <div class="carousel-item{% if forloop.first %} active{% endif %} photo" style="background: url() 50% 50% no-repeat; background-size: cover">
+      <img src="{{ cover }}" alt="">
+    </div>
+    {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#carousel{% if include.id %}-{{ include.id }}{% endif %}" role="button" data-slide="prev">
+    <span class="sr-only carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel{% if include.id %}-{{ include.id }}{% endif %}" role="button" data-slide="next">
+    <span class="sr-only carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

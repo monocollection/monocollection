@@ -1,0 +1,76 @@
+<footer class="footer">
+  <nav class="navbar navbar-light navbar-expand-lg">
+    <div class="container-fluid">
+      <div class="row no-gutters w-100 border-top">
+        <div class="col-12">
+          <span id="copyright">&copy; {{ site.title }}</span>
+        </div>
+        <div class="col-12 d-block d-sm-none">
+          <a class="d-block d-sm-none float-right" style="font-size: 12px;" href="{% if page.lang == 'en' %}/en{% endif %}/contact">CONTACT</a>
+        </div>
+        <div class="col-12" style="margin-top: -10px;">
+          {%- assign page_paths = site.data.nav-footer -%}
+          <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse mr-auto" id="navbarSupportedContent">
+            {% if page_paths.first %}
+            <ul class="navbar-nav w-100 footer--navbar--menu">
+              {%- for path in page_paths -%}
+                {% unless path.first %}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                <li class="nav-item col">
+                  <a class="nav-link{% if page.url contains my_page.term %} active{% endif %}" href="{% if page.lang == 'en' %}/en{% endif %}{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                </li>
+                {%- endif -%}
+                {% endunless %}
+              {% endfor -%}
+              <li class="nav-item col-12 text-right">
+                {% assign links = page_paths | last | first | last %}
+                {% if links.first %}
+                <ul class="navbar-nav float-right footer--navbar--link d-flex justify-content-between">
+                  {% for link_hash in links %}
+                  <li class="nav-item">
+                    {% for link in link_hash %}
+                      {% assign link_slug = link[0] | escape | slugify %}
+                    <a class="nav-link {{ link_slug }}{% unless link_slug == 'changeungbok-com' %} text-hide{% endunless %}" target="_blank" href="{{ link[1] | relative_url }}">{{ link[0] | escape }}</a>
+                    {% endfor %}
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+            </ul>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</footer>
+
+<script src="{{ "/assets/javascript/bootstrap/jquery.min.js" | relative_url }}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="{{ "/assets/javascript/bootstrap/bootstrap.bundle.min.js" | relative_url }}"></script>
+<script src="{{ "/assets/javascript/main.js" | relative_url }}"></script>
+
+<script src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"10a0349901cb4785cf768c7c0","lid":"3af3550e1c","uniqueMethods":true}) })</script>
+{% if page.path == 'front.html' or page.path == 'en/front.html' %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script>
+$(function(){
+  $('[data-toggle="lightbox"]').ekkoLightbox({
+    alwaysShowClose: true,
+    onContentLoaded: function() {
+      link = this._$element.attr('data-link');
+      $(this._$lightboxBodyTwo).on('click', function(e){
+        window.open(link);
+      });
+    }
+  });
+});
+</script>
+{% endif %}

@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+{% assign paths = page.url | replace: '.html', '' | split: '/' %}
+{% assign slug = paths[2] %}
+{% assign row = site.data.works | where: "slug", page.category | first %}
+<header class="item--header">
+  <div class="breadcrumbs border-bottom">
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="/">HOME</a> / <a href="{% if page.lang == 'en' %}/en{% endif %}/works/">WORKS</a> / <a href="{% if page.lang == 'en' %}/en{% endif %}/works/{{ page.category }}">{% if page.lang != 'en' %}{{ row.name }}{% else %}{{ row.slug | upcase }}{% endif %}</a>
+      </div>
+      <div class="col-sm-12 d-none d-sm-block">
+        <span class="term active">{% if page.lang != 'en' %}{{ row.name }}{% else %}{{ row.slug | upcase }}{% endif %}</span>
+        {{ page.type }}
+      </div>
+    </div>
+  </div>
+</header>
+
+<article class="item">
+  <div class="row item--content">
+    <div class="col-md-12 item--content--cover{% if page.images.size == 1 %} crop{% endif %}">
+      {% if page.images.size > 1 %}
+        {% for image in page.images %}
+          {% assign image_path = site.item_img_url | append: '/' | append: page.category | append: '/' | append: image %}
+          {% if forloop.first %}{% assign covers = image_path %}{% else %}{% assign covers = covers | append: '|' | append: image_path %}{% endif %}
+        {% endfor %}{% assign covers = covers | split: '|' %}
+        {% include carousel.html covers=covers id=page.slug %}
+      {% else %}
+      {% assign cover = page.images | first %}
+      <img src="{{ site.item_img_url }}/{% if page.type contains 'press' %}press{% else %}{{ page.category }}{% endif %}/{{ cover }}" alt="{{ page.title }}">
+      {% endif %}
+    </div>
+    <div class="col-md-12 item--content--text row">
+      <div class="col">
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+      </div>
+      <div class="col d-none d-lg-block">
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer class="item--footer row">
+  <div class="col-md-12">
+    <div class="back">
+      <a href="{% if page.lang == 'en' %}/en{% endif %}/works/{{ page.category }}"><img src="/img/icon-back.png" /></a>
+    </div>
+  </div>
+  <div class="col-md-12">&nbsp;</div>
+</footer>

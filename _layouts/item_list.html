@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<header class="item--header">
+  <div class="breadcrumbs border-bottom">
+    <div class="row">
+      <div class="col-sm-12">
+        <a href="/">HOME</a> / <a href="{% if page.lang == 'en' %}/en{% endif %}/works/">WORKS</a> / <a href="{% if page.lang == 'en' %}/en{% endif %}/works/{{ page.term }}.html">{{ page.title | upcase }}</a>
+      </div>
+      <div class="col-sm-12 d-none d-sm-block">
+{% assign pathes = page.url | replace: '.html', '' | split: '/' %}
+{% if page.lang == 'en' %}{% assign type = pathes[2] %}{% assign slug = pathes[3] %}{% else %}{% assign type = pathes[1] %}{% assign slug = pathes[2] %}{% endif %}
+        <span class="term active">
+          {% if page.lang != 'en' %}{{ page.title }}{% else %}{{ slug | replace: '-', " " | upcase }}{% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% if page.lang == 'en' %}
+  {% assign groups = site.work_en | group_by: "category" | sort: "name" %}
+{% else %}
+  {% assign groups = site.work | group_by: "category" | sort: "name" %}
+{% endif %}
+{% assign term = groups | where: "name", page.term | first %}
+
+{% assign category = site.data.works | where: "slug", page.term | first %}
+<h3 class="border-bottom">{% if page.lang == 'en' %}{{ category.slug }}{% else %}{{ category.name }}{% endif %}</h3>
+{% capture data_file %}{{ type }}-{{ page.term }}{% endcapture %}
+{% assign item_orders = site.data[data_file] %}
+<ul class="list-inline row item--list">
+  {% for order in item_orders %}
+    {% assign item = term.items | where: 'slug', order | first %}
+    {% assign cover = item.images | first %}
+  <li class="col-md-6 list-inline-item">
+    <a href="{{ item.url }}">
+      <img class="item--list--cover" src="{{ site.item_img_url }}/{{ item.category }}/{{ cover }}" alt="{{ item.title }}">
+      <h4>{{ item.title }}</h4>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

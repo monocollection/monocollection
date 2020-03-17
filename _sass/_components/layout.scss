@@ -1,0 +1,288 @@
+body {
+  padding: 60px 0;
+  background-color: $light-white;
+  overflow-x: hidden;
+  small a:hover {
+    color: $primary;
+  }
+  @media (max-width: 1440px) {
+    padding-top: 42px;
+  }
+}
+
+.navbar.navbar-light {
+  .header & .container-fluid .row,
+  .footer & .container-fluid .row  {
+    height: 60px;
+    background-color: $light-white;
+    @media (max-width: 1440px) {
+      height: 43px;
+    }
+    .nav-link {
+      margin-top: 3px;
+      padding: 0 !important;
+    }
+    @media (max-width: 1440px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  .navbar-brand img {
+    height: 12px;
+    margin-top: 9px;
+    @media (min-width: 1441px) {
+      height: 14px;
+      margin-top: 1px;
+    }
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    background: $light-white;
+    right: 0;
+    top: 50px;
+    opacity: .9;
+    padding: .5rem;
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      background: transparent;
+      opacity: 1;
+      right: 0;
+      top: 9px;
+      padding: 0;
+    }
+  }
+
+  .nav-link {
+    font-weight: bold;
+    color: $black;
+    text-transform: uppercase;
+    @include hover-focus {
+      color: $blue;
+      outline: 0;
+    }
+    &.d-inline,
+    &.changeungbok-com {
+      font-size: 0.875rem;
+      font-weight: 500;
+      @media (max-width: 1440px) {
+        font-size: 0.75rem;
+      }
+    }
+    &.active {
+      color: $primary;
+    }
+  }
+
+  #copyright {
+    text-transform: uppercase;
+  }
+
+  .navbar-toggler {
+    border-color: transparent;
+    padding: 0;
+  }
+}
+
+.navbar-expand-lg .navbar-nav {
+  .nav-item.open {
+    top: 0px;
+  }
+  .dropdown {
+    &.show {
+      top: 0px;
+    }
+    .dropdown-menu {
+      border-radius: 0;
+      opacity: 1;
+      width: 100%;
+      border: 0;
+      margin-left: -0.5rem;
+      padding-bottom: 1rem;
+      background-color: $light-white;
+      @include media-breakpoint-up(lg) {
+        position: relative;
+      }
+      .dropdown-item {
+        font-size: 0.875rem;
+        @media (max-width: 1440px) {
+          font-size: 0.75rem;
+        }
+        font-weight: bold;
+        padding: 0 .5rem;
+        line-height: 1.3rem;
+        text-transform: uppercase;
+        background-color: $light-white;
+        &.active {
+          color: $primary;
+        }
+        @include hover-focus {
+          color: $primary;
+        }
+      }
+      &.show {
+        top: 15px;
+        @media (max-width: 1440px) {
+          top: 4px;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.container-fluid {
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+  }
+  &.page-content {
+    padding: 0 30px;
+    img {
+      max-width: 100%;
+    }
+    @media (max-width: 1440px) {
+      padding: 0 20px;
+    }
+    @media(min-width: 5120px){
+      padding: 70px 60px;
+    }
+    .item--content--text .col {
+      overflow-y: auto;
+    }
+  }
+  .navbar.fixed-top &,
+  .footer .navbar & {
+    padding: 0 30px;
+    @media (max-width: 1440px) {
+      padding: 0 20px;
+    }
+  }
+}
+
+.navbar-nav {
+  .nav-link {
+    color: $black;
+    @include hover-focus {
+      color: $blue;
+    }
+    &.disabled {
+      color: $navbar-light-disabled-color;
+      @include hover-focus {
+        color: $navbar-light-disabled-color !important;
+      }
+    }
+  }
+  .show > .nav-link,
+  .active > .nav-link,
+  .nav-link.show,
+  .nav-link.active {
+    color: $blue;
+  }
+}
+
+.breadcrumbs {
+  line-height: 1;
+  padding-top: 11px;
+  height: 40px;
+  margin-bottom: 40px;
+  font-size: 0.875rem;
+  @media (max-width: 1440px) {
+    height: 30px;
+    font-size: 0.75rem;
+    padding-top: 8px;
+    margin-bottom: 30px;
+  }
+  font-weight: 500;
+  top: 0;
+  transition: all 0.75s;
+  .active {
+    font-weight: 700;
+  }
+  &.fixed {
+    position: fixed;
+    top: 60px;
+    @media (max-width: 1440px) {
+      top: 42px;
+    }
+    background-color: $light-white;
+    z-index: 100;
+  }
+  @media (max-width: 1440px) {
+    .front & {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 200;
+  .container-fluid .row {
+    padding-top: 10px;
+  }
+  #copyright, .changeungbok-com {
+    font-size: 0.875rem;
+    @media (max-width: 1440px) {
+      font-size: 0.75rem;
+    }
+    font-weight: 500;
+    padding-top: 5px;
+  }
+  .nav-item.col-12.text-right {
+    padding-right: 0;
+  }
+  .facebook,
+  .instagram {
+    width: 25px;
+    height: 25px;
+    @media (max-width: 1440px) {
+      width: 18px;
+      height: 18px;
+    }
+    margin-right: $spacer*2;
+    @media (min-width: 2500px) {
+      margin-right: $spacer*5;
+    }
+  }
+  .facebook {
+    background: url('/img/icon-facebook.png') no-repeat;
+    &:hover, &:active {
+      background: url('/img/icon-facebook-a.png') no-repeat;
+      background-size: 25px;
+    }
+    @media (max-width: 1440px) {
+      background-size: 18px;
+      &:hover, &:active {
+        background-size: 18px;
+      }
+    }
+  }
+  .instagram {
+    background: url('/img/icon-instagram.png') no-repeat;
+    &:hover, &:active {
+      background: url('/img/icon-instagram-a.png') no-repeat;
+      background-size: 25px;
+    }
+    @media (max-width: 1440px) {
+      background-size: 18px;
+      &:hover, &:active {
+        background-size: 18px;
+      }
+    }
+  }
+  .changeungbok-com {
+    text-transform: lowercase !important;
+  }
+}
+
+.active {
+  color: $primary;
+  @include hover-focus {
+    color: $blue;
+  }
+}

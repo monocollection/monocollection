@@ -1,0 +1,50 @@
+---
+layout: default
+class: detail
+---
+<article class="item">
+
+  <header class="item--header">
+    <div class="breadcrumbs border-bottom">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="/">HOME</a> / {% if page.title == 'concept' %}<a href="{% if page.lang == 'en' %}/en{% endif %}/works/index.html">WORKS</a> / {% endif %}<a href="{{ page.url }}">{{ page.title | upcase }}</a>
+        </div>
+        <div class="col-md-12 d-none d-sm-block">
+          <span class="term active">{{ page.title | upcase }}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="row item--content">
+    <div class="col-md-12 item--content--cover{% unless page.images.first %} crop{% endunless %}">
+    {% if page.images.first %}
+      {% for image in page.images %}
+        {% assign image_path = site.item_img_url | append: '/' | append: image %}
+        {% if forloop.first %}{% assign covers = image_path %}{% else %}{% assign covers = covers | append: '|' | append: image_path %}{% endif %}
+      {% endfor %}{% assign covers = covers | split: '|' %}
+      {% include carousel.html covers=covers id=page.title %}
+    {% else %}
+      {% if page.link %}<a href="{{ page.link }}" target="_blank">{% endif %}
+      {% if page.cover %}
+      <img src="{{ page.cover }}" alt="{{ page.title }}">
+      {% else %}
+      <p class="sr-only">no image</p>
+      {% endif %}
+      {% if page.link %}</a>{% endif %}
+    {% endif %}
+    </div>
+    <div class="col-md-12 item--content--text row">
+      <div class="col text">
+        <div class="more"><img src="/img/ios-arrow-down.png" alt=""></div>
+        <h2>{{ page.title }}</h2>
+        {{ content }}
+      </div>
+      <div class="col d-none d-lg-block">
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+
+</article>

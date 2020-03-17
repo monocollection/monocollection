@@ -1,0 +1,82 @@
+title: mono collection
+email: ""
+description: mono collection
+
+repository: "air18/upgraded-octo-spork"
+
+# Build settings
+plugins: ["jekyll-sitemap", "jekyll-redirect-from"]
+exclude: ["Gemfile", "Gemfile.lock", "node_modules", "update_bootstrap.sh", "package-lock.json", "LICENSE.md", "README.md"]
+
+kramdown:
+  input: GFM
+  auto_ids: true
+
+collections:
+  work:
+    output: true
+    permalink: /work/:categories/:slug
+  work_en:
+    output: true
+    permalink: /en/work/:categories/:slug
+  application:
+    output: true
+    permalink: /application/:categories/:slug
+  application_en:
+    output: true
+    permalink: /en/application/:categories/:slug
+  press:
+    output: true
+    permalink: /press/:slug
+  press_en:
+    output: true
+    permalink: /en/press/:slug
+
+defaults:
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope:
+      path: "_work"
+      type: work
+    values:
+      layout: item
+      class: detail
+  - scope:
+      path: "_work_en"
+      type: work_en
+    values:
+      layout: item
+      lang: "en"
+      class: detail
+  - scope:
+      path: "_application"
+      type: application
+    values:
+      layout: application
+      class: detail
+  - scope:
+      path: "_application_en"
+      type: application_en
+    values:
+      layout: application
+      lang: "en"
+      class: detail
+  - scope:
+      path: "_press"
+      type: press
+    values:
+      layout: press
+      term: press
+      class: detail
+  - scope:
+      path: "_press_en"
+      type: press_en
+    values:
+      layout: press
+      term: press
+      lang: "en"
+      class: detail
+
+item_img_url: "/img"

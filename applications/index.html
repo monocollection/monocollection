@@ -1,0 +1,39 @@
+---
+layout: default
+title: APPLICATIONS
+---
+
+<header class="item--header">
+  <div class="breadcrumbs border-bottom">
+    <div class="row">
+      <div class="col-sm-15">
+        <a href="/">HOME</a> / <a href="{% if page.lang == 'en' %}/en{% endif %}/applications/">APPLICATIONS</a> /
+      </div>
+      <div class="col-sm-9 d-none d-sm-block">
+        <span class="term active">ALL</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% assign groups = site.application | group_by: "category" %}
+{% assign terms = site.data.applications | map: "slug" %}
+{% for term in terms %}
+{% assign current_group = site.data.applications | where: 'slug', term | first %}
+  <h3 class="border-bottom"><a href="{% if page.lang == 'en' %}/en{% endif %}/applications/{{ term }}">{% if page.lang == 'en' %}{{ term }}{% else %}{{ current_group.name }}{% endif %}</a></h3>
+  {% capture data_file %}applications-{{ term }}{% endcapture %}
+  {% assign item_orders = site.data[data_file] %}
+  <ul class="list-inline row item--list">
+  {% assign group = groups | where: 'name', term | first %}
+  {% for order in item_orders %}
+    {% assign item = group.items | where: 'slug', order | first %}
+    {% assign cover = item.images | first %}
+    <li class="col-md-6 list-inline-item">
+      <a href="{{ item.url }}">
+        <img class="item--list--cover" src="{{ site.item_img_url }}/{{ item.category }}/{{ cover }}" alt="{{ item.title }}">
+        <h4>{{ item.title }}</h4>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endfor %}

@@ -1,0 +1,49 @@
+<header class="header">
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <div class="row no-gutters w-100 border-bottom">
+        <div class="col-12">
+          <a class="navbar-brand" rel="author" href="{% if page.lang == 'en' %}/en{% endif %}{{ "/front" | relative_url }}">
+            <img src="/img/logo.png" alt="mono collection logo" />
+          </a>
+        </div>
+        <div class="col-12">
+          {%- assign paths = site.data.nav-header -%}{% if page.lang == 'en' %}{% assign paths = site.data.nav-header-en %}{% endif %}
+          <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100">
+              {%- for path in paths -%}{% assign children = path | split: " - " %}{% if children.size == 1 %}{%- assign my_page = site.pages | where: "path", path | first -%}{%- if my_page.title -%}
+                <li class="nav-item col-lg-6">
+                  <a class="nav-link{% if page.url == my_page.url %} active{% endif %}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                </li>{%- endif -%}{%- else -%}
+              {%- assign root_item = children | first -%}{%- assign my_page = site.pages | where: "path", root_item | first -%}
+                <li class="nav-item col-lg-6 dropdown">
+                  {% assign menu_item_type = my_page.title | replace: 's', '' %}
+                  <a class="nav-link {% if page.url == my_page.url or page.url contains menu_item_type %} active{% endif %}" href="{{ my_page.url | relative_url }}" id="item-{{ my_page.title | slugify }}" role="button">
+                    {{ my_page.title | escape }}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="item-{{ my_page.slug }}">
+                    {% for child in children %}
+                      {% unless forloop.first %}
+                        {% assign child_page = site.pages | where: "path", child | first %}
+                    <a class="dropdown-item{% if page.url == child_page.url or child_page.url contains page.category %} active{% endif %}" href="{{ child_page.url | relative_url }}">{% unless forloop.index == 2 or forloop.index == 3 %}{% unless child_page.url contains 'applications' %} &horbar; {% endunless %}{% endunless %}{{ child_page.title }}</a>
+                      {% endunless %}
+                    {% endfor %}
+                  </div>
+                </li>
+                {% endif %}
+              {% endfor -%}
+                <li class="nav-item lang col-lg-6 text-lg-right">
+                  <a href="{{ page.url | replace: '/en', '' }}" class="nav-link d-inline{%if page.lang != 'en'%} active{% endif %}">ko</a> |
+                  <a href="{% if page.lang != 'en' %}/en{% endif %}{{ page.url }}" class="nav-link d-inline{%if page.lang == 'en'%} active{% endif %}">en</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

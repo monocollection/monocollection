@@ -1,0 +1,16 @@
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128908624-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-128908624-1');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {% if page.path == 'front.html' || page.path == 'en/front.html' %}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />{% endif %}
+</head>
+{% assign classes = '' %}{% if page.url %}{% assign classes = page.url | replace:'.html' | replace:'/',' ' | lstrip | rstrip %}{% if page.url == '/' %}{% assign classes = "front" %}{% endif %}{% endif %}{% if page.url == '/press.html' %}{% assign classes = "press-list" %}{% endif %}{% if page.url == '/en/press.html' %}{% assign classes = "en press-list" %}{% endif %}{% if page.class %}{% assign classes = classes | append: ' ' | append: page.class %}{% endif %}{% if layout.class %}{% unless classes contains 'detail' %}{% assign classes = classes | append: ' ' | append: layout.class %}{% endunless %}{% endif %}

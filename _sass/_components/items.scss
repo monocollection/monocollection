@@ -1,0 +1,46 @@
+
+.works, .work,
+.applications, .application,
+.press-list {
+  h3 {
+    font-size: 24px;
+    @media (max-width: 1440px) {
+      font-size: 20px;
+      padding-bottom: 18px;
+      margin-top: 62px;
+      margin-bottom: 46px;
+    }
+    font-weight: 700;
+    margin-top: 95px;
+    padding-bottom: 16px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    a {
+      @include hover-focus {
+        color: $blue;
+      }
+    }
+  }
+  .item--list {
+    .list-inline-item {
+      margin-right: 0;
+      img {
+        margin-bottom: .625rem;
+      }
+      h4 {
+        font-size: 16px; // 16pt, 21px
+        font-weight: 500;
+        height: 50px;
+        margin-bottom: 20px;
+        @media (max-width: 1440px) {
+          font-size: 14px;
+          margin-bottom: 3px;
+        }
+      }
+    }
+    &--cover {
+
+    }
+  }
+
+}

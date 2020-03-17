@@ -1,0 +1,22 @@
+---
+layout: default
+title:
+lang: en
+class: detail
+---
+
+<div class="breadcrumbs border-bottom">
+  <a href="/">HOME</a>
+</div>
+
+{% assign covers = site.data.front-banners %}
+{% include carousel.html covers=covers id='front' %}
+
+{% assign modal = site.data.front-modals.first %}
+{% if modal.img %}
+<div class="d-none">
+  <a href="{{ modal.img }}" data-toggle="lightbox" data-link="{{ modal.link }}" class="col-6">
+      <img src="{{ modal.img }}" class="img-fluid" alt="{{ modal.title }}" />
+  </a>
+</div>
+{% endif %}

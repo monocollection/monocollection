@@ -1,0 +1,11 @@
+.front {
+  .carousel {
+    .carousel--footer {
+      position: absolute;
+      bottom: 69px;
+      @media (max-width: 1440px) {
+        bottom: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+---
+---
+
+@import "bootstrap/bootstrap";
+
+html,
+body {
+  height: 100%;
+  background-color: #1A1311;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  background: url('/img/soon/bg-ip10p.jpg') no-repeat;
+  background-size: cover !important;
+  padding: 20px 15px;
+}
+
+.masthead-brand img { height: 10px; }
+
+.cover-heading {
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.mastfoot {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 812px) and (orientation: landscape) {
+  body {
+    background: url('/img/soon/bg-ip10l.jpg') no-repeat;
+  }
+}
+
+// iPhone X
+@media only screen and (min-width: 811px) and (orientation: portrait) {
+  body {
+    background: url('/img/soon/bg-ip10p.jpg') no-repeat;
+  }
+}
+@media only screen and (min-width: 811px) and (orientation: landscape) {
+  body {
+    background: url('/img/soon/bg-ip10l.jpg') no-repeat;
+  }
+}
+
+@media only screen and (min-width: 833px) {
+  body { padding: 30px 20px; }
+  .masthead-brand img { height: 14px; }
+  .cover-heading { font-size: 40px; }
+}
+
+// iPad pro
+@media only screen and (min-width: 833px) and (orientation: portrait) {
+  body {
+    background: url('/img/soon/bg-ippp.jpg') no-repeat;
+  }
+}
+@media only screen and (min-width: 833px) and (orientation: landscape) {
+  body {
+    background: url('/img/soon/bg-ippl.jpg') no-repeat;
+  }
+}
+@include media-breakpoint-up(xl) {
+  body {
+    background: url('/img/soon/bg-fhd.jpg') no-repeat;
+  }
+  .cover-heading { font-size: 42px; }
+}
+// XLarge
+@media only screen and (min-width: 1920px) {
+  body {
+    background: url('/img/soon/bg-xl.jpg') no-repeat;
+    padding: 30px;
+  }
+  .cover-heading { font-size: 53px; }
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+  float: left;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}

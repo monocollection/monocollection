@@ -1,0 +1,77 @@
+---
+layout: splash
+title: mono collection
+class: detail
+---
+<div class="yt-cover">
+  <a id="toggle-mute" href="#"><img src="/img/ios-volume-low.png" alt="sound"></a>
+  <a id="skip" href="/front"><img src="/img/ios-close-empty.png" alt="skip"></a>
+</div>
+<video src="/assets/mono-collection.mp4" type="video/mp4" autoplay muted></video>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+  $(function(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      location.href="/front";
+    }
+    $('video').on('ended',function(){
+      location.href="/front";
+    });
+    $('#toggle-mute').click(function(e){
+      if($("video").prop('muted')){
+        $("video").prop('muted', false);
+        $('#toggle-mute img').attr('src', '/img/ios-volume-high.png')
+      } else {
+        $("video").prop('muted', true);
+        $('#toggle-mute img').attr('src', '/img/ios-volume-low.png')
+      }
+    })
+  });
+</script>
+<style>
+#toggle-mute, #skip, a, a:hover a:active { color: #fff !important; }
+#toggle-mute img, #skip img { width: 50px; height: 50px; }
+#toggle-mute { position: absolute; z-index: 1001; left: 50%; transform: translate(-50%, 0);bottom: 160px; }
+#skip { position: absolute; z-index: 1002; top: 10px; right: 10px; }
+.yt-cover{
+  position: absolute;
+  top: 0;
+  bottom:0;
+  right:0;
+  left:0;
+  z-index:1000;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  transition: 1s opacity;
+}
+.stopfade {
+   opacity: .5;
+}
+@media screen and (max-width: 500px) {
+  div{width:70%;}
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(//i3.ytimg.com/vi/-LhkMS9-U3A/maxresdefault.jpg) #000 no-repeat center center fixed; }
+  #video { display: none; }
+}
+@media (min-width: 5119px) {
+  #video { margin-top: -140px; }
+}
+</style>
