@@ -2,7 +2,7 @@ title: mono collection
 email: ""
 description: mono collection
 
-repository: "air18/upgraded-octo-spork"
+repository: "monocollection/monocollection"
 
 # Build settings
 plugins: ["jekyll-sitemap", "jekyll-redirect-from"]

@@ -17,7 +17,7 @@ term: contact
 경기도 파주시 회동길 503(문발동) 1층    
 10881    
 
-E-mail: <info@monocollection.com>{: class="active"}    
+E-mail: <info@studio-monocollection.com>{: class="active"}    
 Phone: 82-(0)2-517-5170
 
 ***Opening Hours***    
