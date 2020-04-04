@@ -6,3 +6,4 @@ package-lock.json
 Gemfile.lock
 .ruby-version
 data
+.vagrant

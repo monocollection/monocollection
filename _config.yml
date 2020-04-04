@@ -6,7 +6,12 @@ repository: "monocollection/monocollection"
 
 # Build settings
 plugins: ["jekyll-sitemap", "jekyll-redirect-from"]
-exclude: ["Gemfile", "Gemfile.lock", "node_modules", "update_bootstrap.sh", "package-lock.json", "LICENSE.md", "README.md"]
+exclude: [
+  "Gemfile", "Gemfile.lock",
+  "node_modules", "package-lock.json",
+  "LICENSE.md", "README.md",
+  "update_bootstrap.sh", "slugify_files.py"
+]
 
 kramdown:
   input: GFM
