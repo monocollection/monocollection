@@ -18,11 +18,10 @@ Vagrant.configure("2") do |config|
   config.vm.provision 'shell', keep_color: true, privileged: false, inline: <<-SHELL
     anyenv install pyenv && . ~/.bash_profile
     pyenv install 3.8.2 && pyenv global 3.8.2
-    pip install --upgrade pip && pip install python-slugify[unidecode]
-    sudo apt install python3 python3-pil
+    pip install --upgrade pip && pip install python-slugify[unidecode] pillow
     curl -LO https://github.com/jarun/imgp/releases/download/v2.7/imgp_2.7-1_ubuntu16.04.amd64.deb
     sudo apt install ./imgp_2.7-1_ubuntu16.04.amd64.deb && rm ./imgp_2.7-1_ubuntu16.04.amd64.deb
-    sudo cp slugify_files.py /usr/local/bin/slugify_files
+    sudo cp /vagrant/slugify_files.py /usr/local/bin/slugify_files
   SHELL
 
   # https://www.vagrantup.com/docs/vagrantfile/vagrant_settings.html#config-vagrant-plugins
