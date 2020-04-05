@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "monocollection"
   config.vm.network "private_network", ip: "192.168.33.12"
   config.vm.network "forwarded_port", guest: 4000, host: 4000, id: "jekyll"
-  config.vm.synced_folder ".", "/vagrant", type: 'nfs'
+  config.vm.synced_folder ".", "/vagrant", type: 'nfs', fsnotify: true
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = "monocollection"
