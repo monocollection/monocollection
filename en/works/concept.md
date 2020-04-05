@@ -6,9 +6,10 @@ images:
   - casa1603-1110.jpg
   - casa1603-0095.jpg
   - casa1603-0114.jpg
+  - w-dyk04882.jpg
 ---
 
-The patterns collected in MONO COLLECTION are categorized within Chang Eungbok’s design concept according to three broad themes: ‘Mountain-Water,’ ‘Peach Blossom Dream,’ and ‘Daam.’   
+The patterns collected in MONO COLLECTION are categorized within Chang Eungbok’s design concept according to four broad themes: ‘Mountain-Water,’ ‘Peach Blossom Dream’, ‘Daam’ and ‘The Guardian’.  
 Together, they represent a wide variety of visual, sensual, and emotional experiences, that are linked by Chang’s abiding interest in Korean culture and her desire to create a genuinely contemporary design style.
 <br><br>
 
@@ -37,3 +38,10 @@ In-Between / Metamorphosis / Void / Hybrid / Layers / Purity /Action / Gesture /
 ‘Daam’ represents the spirit of experimentation and spontaneity, combined with a sense of harmony and
 peace. ‘Daam’ includes exciting fabrics and furniture which are characterized by fluid, layered, and hybrid
 styles.
+<br><br>
+
+**THE GUARDIAN**
+
+utilitarian / bio-degradable / sustainable / natural resources / modest sensuality / raw elegance / soft structure
+
+‘The guardian’ express the naturalness of repeated form but also  the joy of being freed from form. It  incorporates the atypical, simplistic, crude and raw aspects that nature possesses into the functionality and utility of pattern design. As a result, ’The Guardian’ brings the human closer to the non-human, making us feel more in touch with our environment, and encouraging more intimate and spontaneous emotions.
