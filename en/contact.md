@@ -10,17 +10,17 @@ term: contact
 For more information about our privacy practices, or if you would like to be put on our mailing list,
 please contact us by e-mail or by mail using the details provided below.
 
-***MONO COLLECTION***    
-Bok Island Co., Ltd    
-1F, 503, Hoedong-gil, Paju-si,    
-Gyeonggi-do, KOREA    
-10881    
+***MONO COLLECTION***
+Bok Island Co., Ltd
+1F, 503, Hoedong-gil, Paju-si,
+Gyeonggi-do, KOREA
+10881
 
-E-mail: <info@studio-monocollection.com>{: class="active"}    
+E-mail: <info@monocollection.com>{: class="active"}
 Phone: 82-(0)2-517-5170
 
-***Opening Hours***    
-Mon-Thu 09:00~18:00    
+***Opening Hours***
+Mon-Thu 09:00~18:00
 Fri 10:00~19:00
 
 <p>&nbsp;</p>

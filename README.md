@@ -19,3 +19,4 @@ $ imgp -wracx 1500x1500 {target_dir}
 # thubnail
 $ imgp -wracx 610x610 {target_dir}
 ```
+
