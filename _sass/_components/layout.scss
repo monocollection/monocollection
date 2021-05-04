@@ -225,13 +225,13 @@ body {
   .container-fluid .row {
     padding-top: 10px;
   }
-  #copyright, .changeungbok-com {
+  #copyright, #shop, .changeungbok-com {
     font-size: 0.875rem;
+    font-weight: 500;
+    padding-top: 3px;
     @media (max-width: 1440px) {
       font-size: 0.75rem;
     }
-    font-weight: 500;
-    padding-top: 5px;
   }
   .nav-item.col-12.text-right {
     padding-right: 0;

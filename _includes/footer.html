@@ -2,13 +2,14 @@
   <nav class="navbar navbar-light navbar-expand-lg">
     <div class="container-fluid">
       <div class="row no-gutters w-100 border-top">
-        <div class="col-12">
-          <span id="copyright">&copy; {{ site.title }}</span>
+        <div class="col row" style="margin-top: -10px;">
+          <div class="col" id="copyright">&copy; {{ site.title }}</div>
+          <div class="col" id="shop"><a href="https://monocollectionshop.com/" target="_blank">SHOP</a></div>
         </div>
-        <div class="col-12 d-block d-sm-none">
+        <div class="col d-block d-sm-none">
           <a class="d-block d-sm-none float-right" style="font-size: 12px;" href="{% if page.lang == 'en' %}/en{% endif %}/contact">CONTACT</a>
         </div>
-        <div class="col-12" style="margin-top: -10px;">
+        <div class="col" style="margin-top: -10px;">
           {%- assign page_paths = site.data.nav-footer -%}
           <button class="navbar-toggler d-none" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
