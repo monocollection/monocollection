@@ -121,6 +121,13 @@ $(function(){
     }
   });
 
+  if (window.matchMedia("(max-width: 575.98px)").matches) {
+    $('footer.footer .col:last-child').hide();
+    var shopLink = $('#shop a').css('fontSize', '12px').addClass('float-right mr-3');
+    $('.col.d-block.d-sm-none').append(shopLink);
+    $('#shop').hide();
+  }
+
 });
 
 $.fn.scrollEnd = function(callback, timeout) {
