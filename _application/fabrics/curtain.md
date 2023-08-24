@@ -3,16 +3,16 @@ title: 커튼
 slug: curtain
 category: fabrics
 images:
-  - curtain/DSC00270.jpg
+  - curtain/ctn.jpg
   - curtain/DSC00257-3000.jpg
   - curtain/DSC00288.jpg
   - curtain/DSC00315.jpg
   - curtain/DSC00488.jpg
   - curtain/DSC00492.jpg
-  - curtain/IMG_6257.jpg
+  - curtain/ctn1.jpg
   - curtain/dwm-054.jpg
-  - curtain/dwm-055.jpg
-  - curtain/w-kakaotalk-20200313-114534683-10.jpg
+  - curtain/ctn14.jpg
+  - curtain/ctn15.jpg
   - curtain/w-casa1906-0245.jpg
   - curtain/w-casa1906-0303.jpg
   - curtain/w-img-1895-web.jpg
