@@ -3,8 +3,12 @@ title: 지장
 slug: paper-cabinet
 category: furniture
 images:
-  - 120418-065.jpg
-  - paper-cabinet/120418-044.jpg
+  - paper-cabinet/pc1.jpg
+  - paper-cabinet/pc2.jpg
+  - paper-cabinet/pc3.jpg
+  - paper-cabinet/pc4.jpg
+  - paper-cabinet/pc5.jpg
+  - paper-cabinet/pc6.jpg
   - paper-cabinet/212611-212611.jpg
   - paper-cabinet/212613-212613.jpg
   - paper-cabinet/IMG_9189.jpg
@@ -17,15 +21,9 @@ images:
   - paper-cabinet/w-wkgt-4502.jpg
   - paper-cabinet/w-wkgt-4509.jpg
   - paper-cabinet/w-wkgt-4522.jpg
-  - paper-cabinet/w-wkgt-4542.jpg
-  - paper-cabinet/w-wkgt-4587.jpg
   - paper-cabinet/w-wkgt-4594.jpg
   - paper-cabinet/w-wkgt-4600.jpg
-  - paper-cabinet/w-wkgt-4601.jpg
-  - paper-cabinet/w-wkgt-4622.jpg
-  - paper-cabinet/w-wkgt-4631.jpg
   - paper-cabinet/w-wkgt-4641.jpg
-  - paper-cabinet/w-wkgt-4644.jpg
 ---
 
 종이장은 조선시대 관복장에서 유래된  단아하고 정감어린 장의 형태이다.
