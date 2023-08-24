@@ -3,6 +3,9 @@ title: Lighting
 slug: lighting
 category: softerior-application
 images:
+  - lighting/l15.jpg
+  - lighting/l16.jpg
+  - lighting/JA01_160715_02411_R2_2302065_v0_O.jpg
   - JJ_6941-2.jpg
   - lighting/IMG_7252.jpg
   - lighting/PCN2497.jpg
