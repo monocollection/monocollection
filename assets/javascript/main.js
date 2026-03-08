@@ -1,4 +1,5 @@
 $(function(){
+  syncFrontCarouselHeight();
   syncDetailCoverHeight();
   if (window.matchMedia("(min-width: 992px)").matches) {
     syncDetailTextHeight();
@@ -25,6 +26,14 @@ $(function(){
     }
 
     return Math.min(h, cover.width());
+  }
+  function syncFrontCarouselHeight() {
+    if (!$('body').hasClass('front')) {
+      return;
+    }
+
+    var h = getViewportContentHeight();
+    $('.front .carousel-inner, .front .carousel-item').height(h);
   }
   function syncDetailCoverHeight() {
     var h = getDetailCoverHeight();
@@ -87,6 +96,7 @@ $(function(){
     });
   }
   $(window).on("resize",function(e){
+    syncFrontCarouselHeight();
     syncDetailCoverHeight();
     if (window.matchMedia("(min-width: 992px)").matches) {
       syncDetailTextHeight();
